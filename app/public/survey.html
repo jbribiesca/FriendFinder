@@ -18,7 +18,6 @@
 
 </head>
 <body>
-
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Survey Questions</h1>
@@ -38,7 +37,7 @@
                 <p>1 (Strongly Disagree) - 5 (Strongly Agree)</p>
                 <h4>Question 1</h4>
                 <div class="form-group">
-                    <label for="q1">You love the outdoors</label>
+                    <label for="q1">I like the outdoors</label>
                     <select class="form-control" id="q1">
                         <option></option>
                         <option>1</option>
@@ -48,6 +47,124 @@
                         <option>5</option>
                     </select>
                 </div>
+
+                <h4>Question 2</h4>
+                <div class="form-group">
+                    <label for="q2">I like watching sports</label>
+                    <select class="form-control" id="q2">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <h4>Question 3</h4>
+                <div class="form-group">
+                    <label for="q3">I like crowded places</label>
+                    <select class="form-control" id="q3">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <h4>Question 4</h4>
+                <div class="form-group">
+                    <label for="q4">I like having people over for dinner</label>
+                    <select class="form-control" id="q4">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <h4>Question 5</h4>
+                <div class="form-group">
+                    <label for="q5">I like to cook</label>
+                    <select class="form-control" id="q5">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <h4>Question 6</h4>
+                <div class="form-group">
+                    <label for="q6">I like having people over for dinner</label>
+                    <select class="form-control" id="q6">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <h4>Question 7</h4>
+                <div class="form-group">
+                    <label for="q7">I like going out to eat</label>
+                    <select class="form-control" id="q7">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                
+                <h4>Question 8</h4>
+                <div class="form-group">
+                    <label for="q8">I like having people over for dinner</label>
+                    <select class="form-control" id="q8">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <h4>Question 9</h4>
+                <div class="form-group">
+                    <label for="q9">I like animals</label>
+                    <select class="form-control" id="q9">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <h4>Question 10</h4>
+                <div class="form-group">
+                    <label for="q10">I like to read books</label>
+                    <select class="form-control" id="q10">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
                 <button type="submit" class="btn btn-primary" id="submitAnswers">Submit</button>
             </form>
         </div>
@@ -64,7 +181,7 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="" alt="">
+                    <img id="match-img" src="" alt="" width="200px">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -90,7 +207,16 @@
                     name: $("#name").val(),
                     photo: $("#photo").val(),
                     scores: [
-                        $("#q1").val()
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
                     ]
                 }
                 $.post("/api/friends", userData, function (data) {
